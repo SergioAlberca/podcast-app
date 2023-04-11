@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { Link } from "react-router-dom";
 import usePodcastListModelController from "./controllers/podcast_list.controller";
 
 export default function PodcastsList() {
@@ -14,6 +14,9 @@ export default function PodcastsList() {
           </div>
         );
       })}
+      <button>
+        <Link to={`podcast/1`}>Ir a detalle</Link>
+      </button>
     </div>
   );
 }

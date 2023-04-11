@@ -1,9 +1,6 @@
 import { Podcast } from "../../core/podcast/domain/models/podcast_model";
 
-export const setLocalStorageElementWithExpiry = (
-  key: string,
-  value: Podcast[]
-) => {
+export const setLocalStorageElementWithExpiry = <T>(key: string, value: T) => {
   const today = new Date();
   const limitDate = today.setDate(today.getDate() + 1);
 
@@ -15,7 +12,7 @@ export const setLocalStorageElementWithExpiry = (
   localStorage.setItem(key, JSON.stringify(item));
 };
 
-export const getLocalStorageElementWithExpiry = (key: string): Podcast[] => {
+export const getLocalStorageElementWithExpiry = <T>(key: string): T[] => {
   const itemStr = localStorage.getItem(key);
 
   if (!itemStr) {

@@ -1,6 +1,9 @@
+import { PodcastDetail } from "../../../domain/models/podcastDetail_model";
 import { Podcast } from "../../../domain/models/podcast_model";
+import { podcastDetailToDomain } from "../../../domain/transformers/podcastDetailToDomain";
 import PodcastDataSource from "../podcastDataSource";
 import { PodcastAPIEntity } from "./Entity/PodcastApiEntity";
+import { PodcastDetailAPIEntity } from "./Entity/PodcastDetailApiEntity";
 
 const BASE_URL =
   "https://itunes.apple.com/us/rss/toppodcasts/limit=100/genre=1310/json";
@@ -20,5 +23,15 @@ export default class PodcastAPIDataSourceImpl implements PodcastDataSource {
     return data.feed.entry.map((item) => ({
       ...item,
     }));
+  }
+
+  async getPodcastDetail(id: string): Promise<PodcastDetail[]> {
+    const response = await myFetch<Record<string, string>>(
+      `https://api.allorigins.win/get?url=${encodeURIComponent(
+        "https://itunes.apple.com/lookup?id=934552872&media=podcast&entity=podcastEpisode&limit=20"
+      )}`
+    );
+    const data = await response.json();
+    return podcastDetailToDomain(data).results;
   }
 }
