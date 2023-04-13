@@ -17,12 +17,9 @@ import EpisodeList from "./components/episode_list/episode_list";
 export default function PodcastDetail() {
   const { podcastId } = useParams();
   if (!podcastId) return null;
-  const podcastDetail = useAppSelector((state) =>
-    selectedPodcast(podcastId, state)
-  );
-  usePodcastDetailController(podcastId);
-  const podcastEpisodies = useAppSelector(episodies);
-  const epispodesLoading = useAppSelector(podcastDetailIsLoading);
+
+  const { podcastDetail, epispodesLoading, podcastEpisodies } =
+    usePodcastDetailController(podcastId);
 
   return (
     <MainLayout>

@@ -1,3 +1,4 @@
+import { getFirstElement } from "../../../../../common/utils/collections";
 import { Podcast } from "../../../../../core/podcast/domain/models/podcast_model";
 import "./podcast_card.css";
 
@@ -14,8 +15,7 @@ export default function PodcastCard({ podcast, goToDetail }: Props) {
     >
       <img
         className="card-image"
-        src={podcast["im:image"][0].label}
-        alt={podcast["im:image"][0].label}
+        src={getFirstElement(podcast["im:image"])?.label}
       />
       <h5>{podcast["im:name"].label}</h5>
       <span>Author: {podcast["im:artist"].label}</span>

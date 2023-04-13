@@ -1,10 +1,12 @@
+import { Link } from "react-router-dom";
 import "./header.css";
 
 export default function Header() {
   return (
     <header className="header">
-      <h2>Podcaster</h2>
-      <span>Loading</span>
+      <Link to={"/"}>
+        <h2>Podcaster</h2>
+      </Link>
     </header>
   );
 }
