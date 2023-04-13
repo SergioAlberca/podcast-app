@@ -13,7 +13,12 @@ export default function usePodcastDetailController(podcastId: string) {
   const podcastEpisodies = useAppSelector(episodies);
 
   async function getPodcastDetail() {
-    if (podcastEpisodies.length === 0) {
+    if (
+      podcastEpisodies.length === 0 ||
+      !podcastEpisodies.find(
+        (episode) => episode.collectionId.toString() === podcastId
+      )
+    ) {
       dispatch(getPodcastDetailThunk(podcastId));
     }
   }
