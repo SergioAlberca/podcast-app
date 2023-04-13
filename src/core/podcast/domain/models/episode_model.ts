@@ -15,6 +15,8 @@ export interface Episode {
   collectionViewUrl: string;
   country: string;
   currency: string;
+  description: string;
+  episodeUrl: string;
   feedUrl: string;
   genreIds: string[];
   genres: string[];

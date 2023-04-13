@@ -2,8 +2,17 @@ import { useParams } from "react-router";
 import { useAppSelector } from "../../store/hooks";
 import { selectedPodcast } from "../podcast_list/state/podcast_list.slice";
 import usePodcastDetailController from "./controller/podcast_detail.controller";
-import { episodies } from "./state/podcast_detail.slice";
+import {
+  episodies,
+  podcastDetailIsLoading,
+} from "./state/podcast_detail.slice";
 import { Link } from "react-router-dom";
+import MainLayout from "../../components/layouts/main_layout/main_layout";
+import { millisecondsToMinutes } from "../../../common/utils/time";
+import DetailLayout from "../../components/layouts/detail_layout/detail_layout";
+import "./podcast_detail.css";
+import Loading from "../../components/loading/loading";
+import EpisodeList from "./components/episode_list/episode_list";
 
 export default function PodcastDetail() {
   const { podcastId } = useParams();
@@ -13,19 +22,20 @@ export default function PodcastDetail() {
   );
   usePodcastDetailController(podcastId);
   const podcastEpisodies = useAppSelector(episodies);
+  const epispodesLoading = useAppSelector(podcastDetailIsLoading);
 
   return (
-    <div>
-      <span>{podcastDetail?.["im:name"].label}</span>
-      <span>{podcastDetail?.["im:artist"].label}</span>
-      <span>{podcastDetail?.summary.label}</span>
-      <button>
-        <Link
-          to={`/podcast/${podcastDetail?.id.attributes["im:id"]}/episode/1535809341`}
-        >
-          Ir al episodio
-        </Link>
-      </button>
-    </div>
+    <MainLayout>
+      <DetailLayout podcastId={podcastId}>
+        {!epispodesLoading && podcastDetail ? (
+          <EpisodeList
+            episodes={podcastEpisodies}
+            podcastDetail={podcastDetail}
+          />
+        ) : (
+          <Loading />
+        )}
+      </DetailLayout>
+    </MainLayout>
   );
 }

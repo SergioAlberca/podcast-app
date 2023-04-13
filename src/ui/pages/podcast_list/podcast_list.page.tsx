@@ -1,37 +1,31 @@
-import { Link } from "react-router-dom";
 import usePodcastListModelController from "./controllers/podcast_list.controller";
 import { useAppSelector } from "../../store/hooks";
-import { podcastList } from "./state/podcast_list.slice";
+import { podcastList, podcastListIsLoading } from "./state/podcast_list.slice";
+import MainLayout from "../../components/layouts/main_layout/main_layout";
+import PodcastCard from "./components/podcast_card/podcast_card";
+import "./podcast_list.css";
+import Loading from "../../components/loading/loading";
 
 export default function PodcastsList() {
   const podcasts = useAppSelector(podcastList);
-  const { setPodcast } = usePodcastListModelController();
+  const podcastListLoading = useAppSelector(podcastListIsLoading);
+  const { goToDetail } = usePodcastListModelController();
+
+  if (podcastListLoading) return <Loading />;
 
   return (
-    <div>
-      {podcasts.map((podcast, i) => {
-        return (
-          <div key={i}>
-            <h4>{podcast["im:name"].label}</h4>
-            <p>{podcast["im:artist"].label}</p>
-            <button>
-              <Link
-                to={`podcast/${podcast.id.attributes["im:id"]}`}
-                onClick={() =>
-                  setPodcast({
-                    name: podcast["im:name"].label,
-                    image: podcast["im:image"][0].label,
-                    author: podcast["im:artist"].label,
-                    description: podcast.summary.label,
-                  })
-                }
-              >
-                Ir a detalle
-              </Link>
-            </button>
-          </div>
-        );
-      })}
-    </div>
+    <MainLayout>
+      <div className="container">
+        {podcasts.map((podcast) => {
+          return (
+            <PodcastCard
+              key={podcast.id.attributes["im:id"]}
+              podcast={podcast}
+              goToDetail={goToDetail}
+            />
+          );
+        })}
+      </div>
+    </MainLayout>
   );
 }

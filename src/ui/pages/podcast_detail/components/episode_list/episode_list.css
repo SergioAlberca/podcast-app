@@ -1,0 +1,25 @@
+.podcast-detail-episodes {
+  width: 60%;
+  height: auto;
+}
+
+.episode-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+  text-align: center;
+}
+
+.episode-item > span {
+  min-width: 7.5rem;
+}
+
+.episode-item > span:first-child {
+  color: #339fff;
+  min-width: 0;
+}
+
+.episode-item:nth-child(even) {
+  background-color: #d7d7d7;
+}

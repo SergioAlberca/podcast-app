@@ -1,22 +1,18 @@
 import { useEffect } from "react";
 import { useAppSelector } from "../../../store/hooks";
-import {
-  getPodcastListThunk,
-  podcastList,
-  setSelectedPodcast,
-} from "../state/podcast_list.slice";
+import { getPodcastListThunk, podcastList } from "../state/podcast_list.slice";
 import { useDispatch } from "react-redux";
 import { AppDispatch } from "../../../store/store";
+import { useNavigate } from "react-router-dom";
 
-interface selectedPodcast {
-  name: string;
-  image: string;
-  author: string;
-  description: string;
-}
 export default function usePodcastListModelController() {
   const dispatch = useDispatch<AppDispatch>();
   const podcasts = useAppSelector(podcastList);
+  const navigate = useNavigate();
+
+  const goToDetail = (podcastId: string) => {
+    navigate(`podcast/${podcastId}`);
+  };
 
   async function getPodcasts() {
     if (podcasts.length === 0) {
@@ -24,18 +20,9 @@ export default function usePodcastListModelController() {
     }
   }
 
-  const setPodcast = ({
-    name,
-    image,
-    author,
-    description,
-  }: selectedPodcast) => {
-    dispatch(setSelectedPodcast({ name, image, author, description }));
-  };
-
   useEffect(() => {
     getPodcasts();
   }, []);
 
-  return { setPodcast };
+  return { goToDetail };
 }
