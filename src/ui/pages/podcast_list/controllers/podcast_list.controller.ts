@@ -1,36 +1,41 @@
-import { useEffect, useState } from "react";
-import { Podcast } from "../../../../core/podcast/domain/models/podcast_model";
-import { GetPodcasts } from "../../../../core/podcast/domain/use_cases/get_podcasts_use_case";
-import PodcastAPIDataSourceImpl from "../../../../core/podcast/data/DataSource/API/PodcastApiDataSource";
-import { PodcastRepositoryImpl } from "../../../../core/podcast/data/repositories/podcats_repository";
+import { useEffect } from "react";
+import { useAppSelector } from "../../../store/hooks";
 import {
-  getLocalStorageElementWithExpiry,
-  setLocalStorageElementWithExpiry,
-} from "../../../../common/utils/localStorage";
+  getPodcastListThunk,
+  podcastList,
+  setSelectedPodcast,
+} from "../state/podcast_list.slice";
+import { useDispatch } from "react-redux";
+import { AppDispatch } from "../../../store/store";
 
+interface selectedPodcast {
+  name: string;
+  image: string;
+  author: string;
+  description: string;
+}
 export default function usePodcastListModelController() {
-  const [podcasts, setPodscats] = useState<Podcast[]>(
-    getLocalStorageElementWithExpiry("podcasts")
-  );
-
-  const UseCase = new GetPodcasts(
-    new PodcastRepositoryImpl(new PodcastAPIDataSourceImpl())
-  );
+  const dispatch = useDispatch<AppDispatch>();
+  const podcasts = useAppSelector(podcastList);
 
   async function getPodcasts() {
     if (podcasts.length === 0) {
-      const results = await UseCase.invoke();
-      setPodscats(results);
-      setLocalStorageElementWithExpiry("podcasts", results);
+      dispatch(getPodcastListThunk());
     }
   }
+
+  const setPodcast = ({
+    name,
+    image,
+    author,
+    description,
+  }: selectedPodcast) => {
+    dispatch(setSelectedPodcast({ name, image, author, description }));
+  };
 
   useEffect(() => {
     getPodcasts();
   }, []);
 
-  return {
-    getPodcasts,
-    podcasts,
-  };
+  return { setPodcast };
 }

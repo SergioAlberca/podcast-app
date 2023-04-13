@@ -28,7 +28,7 @@ export default class PodcastAPIDataSourceImpl implements PodcastDataSource {
   async getPodcastDetail(id: string): Promise<PodcastDetail[]> {
     const response = await myFetch<Record<string, string>>(
       `https://api.allorigins.win/get?url=${encodeURIComponent(
-        "https://itunes.apple.com/lookup?id=934552872&media=podcast&entity=podcastEpisode&limit=20"
+        `https://itunes.apple.com/lookup?id=${id}&media=podcast&entity=podcastEpisode&limit=20`
       )}`
     );
     const data = await response.json();

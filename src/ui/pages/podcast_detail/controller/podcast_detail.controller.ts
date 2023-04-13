@@ -1,27 +1,20 @@
 import { useEffect, useState } from "react";
 import PodcastAPIDataSourceImpl from "../../../../core/podcast/data/DataSource/API/PodcastApiDataSource";
-import { PodcastRepositoryImpl } from "../../../../core/podcast/data/repositories/podcats_repository";
+import { useDispatch } from "react-redux";
+import { AppDispatch } from "../../../store/store";
 import {
-  getLocalStorageElementWithExpiry,
-  setLocalStorageElementWithExpiry,
-} from "../../../../common/utils/localStorage";
-import { GetPodcastDetail } from "../../../../core/podcast/domain/use_cases/get_podcast_detail_use_case";
-import { PodcastDetail } from "../../../../core/podcast/domain/models/podcastDetail_model";
+  episodies,
+  getPodcastDetailThunk,
+} from "../state/podcast_detail.slice";
+import { useAppSelector } from "../../../store/hooks";
 
-export default function usePodcastDetailController() {
-  const [podcastDetail, setPodscatDetail] = useState<PodcastDetail[]>(
-    getLocalStorageElementWithExpiry("podcast_detail")
-  );
-
-  const UseCase = new GetPodcastDetail(
-    new PodcastRepositoryImpl(new PodcastAPIDataSourceImpl())
-  );
+export default function usePodcastDetailController(podcastId: string) {
+  const dispatch = useDispatch<AppDispatch>();
+  const podcastEpisodies = useAppSelector(episodies);
 
   async function getPodcastDetail() {
-    if (podcastDetail.length === 0) {
-      const results = await UseCase.invoke("934552872");
-      setPodscatDetail(results);
-      setLocalStorageElementWithExpiry("podcast_detail", results);
+    if (podcastEpisodies.length === 0) {
+      dispatch(getPodcastDetailThunk(podcastId));
     }
   }
 
@@ -29,7 +22,5 @@ export default function usePodcastDetailController() {
     getPodcastDetail();
   }, []);
 
-  return {
-    podcastDetail,
-  };
+  return {};
 }
