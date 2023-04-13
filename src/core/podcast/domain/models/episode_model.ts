@@ -1,4 +1,4 @@
-export interface PodcastDetail {
+export interface Episode {
   artistId: number;
   artistName: string;
   artistViewUrl: string;

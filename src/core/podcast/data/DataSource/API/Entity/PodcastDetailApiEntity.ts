@@ -1,6 +1,6 @@
-import { PodcastDetail } from "../../../../domain/models/podcastDetail_model";
+import { Episode } from "../../../../domain/models/episode_model";
 
 export interface PodcastDetailAPIEntity {
   resultCount: number;
-  results: PodcastDetail[];
+  results: Episode[];
 }

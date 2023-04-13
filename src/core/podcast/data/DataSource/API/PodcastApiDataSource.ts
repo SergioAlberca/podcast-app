@@ -1,4 +1,4 @@
-import { PodcastDetail } from "../../../domain/models/podcastDetail_model";
+import { Episode } from "../../../domain/models/episode_model";
 import { Podcast } from "../../../domain/models/podcast_model";
 import { podcastDetailToDomain } from "../../../domain/transformers/podcastDetailToDomain";
 import PodcastDataSource from "../podcastDataSource";
@@ -25,7 +25,7 @@ export default class PodcastAPIDataSourceImpl implements PodcastDataSource {
     }));
   }
 
-  async getPodcastDetail(id: string): Promise<PodcastDetail[]> {
+  async getPodcastDetail(id: string): Promise<Episode[]> {
     const response = await myFetch<Record<string, string>>(
       `https://api.allorigins.win/get?url=${encodeURIComponent(
         `https://itunes.apple.com/lookup?id=${id}&media=podcast&entity=podcastEpisode&limit=20`

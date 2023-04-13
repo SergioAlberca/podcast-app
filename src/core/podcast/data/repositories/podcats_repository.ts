@@ -1,4 +1,4 @@
-import { PodcastDetail } from "../../domain/models/podcastDetail_model";
+import { Episode } from "../../domain/models/episode_model";
 import { Podcast } from "../../domain/models/podcast_model";
 import { PodcastRepository } from "../../domain/repositories/PodcastRepository";
 import { PodcastDetailAPIEntity } from "../DataSource/API/Entity/PodcastDetailApiEntity";
@@ -15,7 +15,7 @@ export class PodcastRepositoryImpl implements PodcastRepository {
     return this.dataSource.getPodcasts();
   }
 
-  async getPodcastDetail(id: string): Promise<PodcastDetail[]> {
+  async getPodcastDetail(id: string): Promise<Episode[]> {
     return this.dataSource.getPodcastDetail(id);
   }
 }

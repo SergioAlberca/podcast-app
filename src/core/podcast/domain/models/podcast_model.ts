@@ -1,27 +1,10 @@
+import { PodcastImage } from "./podcast_image_model";
+
 export interface Podcast {
   "im:name": {
     label: string;
   };
-  "im:image": [
-    {
-      label: string;
-      attributes: {
-        height: string;
-      };
-    },
-    {
-      label: "https://is5-ssl.mzstatic.com/image/thumb/Podcasts113/v4/f2/21/fa/f221fabd-017f-5125-633b-f1fe4f39802a/mza_182995249085044287.jpg/60x60bb.png";
-      attributes: {
-        height: "60";
-      };
-    },
-    {
-      label: "https://is1-ssl.mzstatic.com/image/thumb/Podcasts113/v4/f2/21/fa/f221fabd-017f-5125-633b-f1fe4f39802a/mza_182995249085044287.jpg/170x170bb.png";
-      attributes: {
-        height: "170";
-      };
-    }
-  ];
+  "im:image": PodcastImage[];
   summary: {
     label: string;
   };

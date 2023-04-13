@@ -8,11 +8,11 @@ import { GetPodcasts } from "../../../../core/podcast/domain/use_cases/get_podca
 import { PodcastRepositoryImpl } from "../../../../core/podcast/data/repositories/podcats_repository";
 import PodcastAPIDataSourceImpl from "../../../../core/podcast/data/DataSource/API/PodcastApiDataSource";
 import { RootState } from "../../../store/store";
-import { PodcastDetail } from "../../../../core/podcast/domain/models/podcastDetail_model";
+import { Episode } from "../../../../core/podcast/domain/models/episode_model";
 import { GetPodcastDetail } from "../../../../core/podcast/domain/use_cases/get_podcast_detail_use_case";
 
 export interface PodcastDetailState {
-  episodies: PodcastDetail[];
+  episodies: Episode[];
   isLoading: boolean;
   hasError: boolean;
 }
@@ -23,7 +23,7 @@ const initialState: PodcastDetailState = {
   hasError: false,
 };
 
-export const getPodcastDetailThunk = createAsyncThunk<PodcastDetail[], string>(
+export const getPodcastDetailThunk = createAsyncThunk<Episode[], string>(
   "getPodcastDetailThunk",
   async (id) => {
     const UseCase = new GetPodcastDetail(
