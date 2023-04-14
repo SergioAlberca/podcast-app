@@ -1,5 +1,4 @@
 .podcast-detail-card {
-  max-height: 34rem;
   border: 1px solid #d7d7d7;
   width: 30%;
   display: flex;
@@ -8,4 +7,5 @@
   flex-direction: column;
   padding: 10px;
   text-align: center;
+  height: calc(50%);
 }

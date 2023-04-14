@@ -1,9 +1,9 @@
-import "./loading.css";
+import styles from "./loading.module.css";
 
 export default function Loading() {
   return (
-    <div className="lds-container">
-      <div className="lds-roller">
+    <div className={styles["lds-container"]}>
+      <div className={styles["lds-roller"]}>
         <div></div>
         <div></div>
         <div></div>

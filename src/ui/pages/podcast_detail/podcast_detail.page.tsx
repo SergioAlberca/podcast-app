@@ -1,5 +1,4 @@
 import { useParams } from "react-router";
-import MainLayout from "@/components/layouts/main_layout/main_layout";
 import DetailLayout from "@/components/layouts/detail_layout/detail_layout";
 import Loading from "@/components/loading/loading";
 import usePodcastDetailController from "./controller/podcast_detail.controller";
@@ -13,7 +12,7 @@ export default function PodcastDetail() {
     usePodcastDetailController(podcastId);
 
   return (
-    <MainLayout>
+    <>
       <DetailLayout podcastId={podcastId}>
         {!epispodesLoading && podcastDetail ? (
           <EpisodeList
@@ -24,6 +23,6 @@ export default function PodcastDetail() {
           <Loading />
         )}
       </DetailLayout>
-    </MainLayout>
+    </>
   );
 }
