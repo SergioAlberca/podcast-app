@@ -2,12 +2,12 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import {
   getLocalStorageElementWithExpiry,
   setLocalStorageElementWithExpiry,
-} from "../../../../common/utils/localStorage";
-import { PodcastRepositoryImpl } from "../../../../core/podcast/data/repositories/podcats_repository";
-import PodcastAPIDataSourceImpl from "../../../../core/podcast/data/DataSource/API/PodcastApiDataSource";
-import { RootState } from "../../../store/store";
-import { Episode } from "../../../../core/podcast/domain/models/episode_model";
-import { GetPodcastDetail } from "../../../../core/podcast/domain/use_cases/get_podcast_detail_use_case";
+} from "@/common/utils/localStorage";
+import { PodcastRepositoryImpl } from "@/core/podcast/data/repositories/podcats_repository";
+import PodcastAPIDataSourceImpl from "@/core/podcast/data/DataSource/API/PodcastApiDataSource";
+import { RootState } from "@/store/store";
+import { Episode } from "@/core/podcast/domain/models/episode_model";
+import { GetPodcastDetail } from "@/core/podcast/domain/use_cases/get_podcast_detail_use_case";
 
 export interface PodcastDetailState {
   episodies: Episode[];

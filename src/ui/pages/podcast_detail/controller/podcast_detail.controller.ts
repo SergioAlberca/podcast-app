@@ -1,13 +1,12 @@
-import { useEffect, useState } from "react";
-import PodcastAPIDataSourceImpl from "../../../../core/podcast/data/DataSource/API/PodcastApiDataSource";
+import { useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { AppDispatch } from "../../../store/store";
+import { AppDispatch } from "@/store/store";
 import {
   episodies,
   getPodcastDetailThunk,
   podcastDetailIsLoading,
 } from "../state/podcast_detail.slice";
-import { useAppSelector } from "../../../store/hooks";
+import { useAppSelector } from "@/store/hooks";
 import { selectedPodcast } from "../../podcast_list/state/podcast_list.slice";
 
 export default function usePodcastDetailController(podcastId: string) {

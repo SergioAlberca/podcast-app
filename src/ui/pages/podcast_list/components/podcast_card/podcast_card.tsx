@@ -1,6 +1,6 @@
-import { getFirstElement } from "../../../../../common/utils/collections";
-import { Podcast } from "../../../../../core/podcast/domain/models/podcast_model";
-import "./podcast_card.css";
+import { getFirstElement } from "@/common/utils/collections";
+import { Podcast } from "@/core/podcast/domain/models/podcast_model";
+import styles from "./podcast_card.module.css";
 
 interface Props {
   podcast: Podcast;
@@ -10,11 +10,11 @@ interface Props {
 export default function PodcastCard({ podcast, goToDetail }: Props) {
   return (
     <div
-      className="card"
+      className={styles.card}
       onClick={() => goToDetail(podcast.id.attributes["im:id"])}
     >
       <img
-        className="card-image"
+        className={styles["card-image"]}
         src={getFirstElement(podcast["im:image"])?.label}
       />
       <h5>{podcast["im:name"].label}</h5>

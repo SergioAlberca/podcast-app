@@ -1,8 +1,3 @@
-.podcast-detail-episodes {
-  width: 60%;
-  height: auto;
-}
-
 .episode-item {
   display: flex;
   justify-content: space-between;

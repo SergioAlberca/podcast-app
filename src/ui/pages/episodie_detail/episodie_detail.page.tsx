@@ -1,9 +1,9 @@
 import { useParams } from "react-router-dom";
-import { useAppSelector } from "../../store/hooks";
+import { useAppSelector } from "@/store/hooks";
 import { selectedEpisodie } from "../podcast_detail/state/podcast_detail.slice";
-import MainLayout from "../../components/layouts/main_layout/main_layout";
-import DetailLayout from "../../components/layouts/detail_layout/detail_layout";
-import "./episode_detail.css";
+import MainLayout from "@/components/layouts/main_layout/main_layout";
+import DetailLayout from "@/components/layouts/detail_layout/detail_layout";
+import "./episode_detail.module.css";
 
 export default function EpisodieDetail() {
   const { podcastId, episodeId } = useParams();

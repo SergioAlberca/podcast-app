@@ -1,6 +1,6 @@
-import { getLastElement } from "../../../common/utils/collections";
-import { Podcast } from "../../../core/podcast/domain/models/podcast_model";
-import Loading from "../loading/loading";
+import { getLastElement } from "@/common/utils/collections";
+import { Podcast } from "@/core/podcast/domain/models/podcast_model";
+import Loading from "@/components/loading/loading";
 import "./podcast_detail_card.css";
 
 interface Props {

@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom";
-import { millisecondsToMinutes } from "../../../../../common/utils/time";
-import { Episode } from "../../../../../core/podcast/domain/models/episode_model";
-import { Podcast } from "../../../../../core/podcast/domain/models/podcast_model";
-import "./episode_list.css";
+import { millisecondsToMinutes } from "@/common/utils/time";
+import { Episode } from "@/core/podcast/domain/models/episode_model";
+import { Podcast } from "@/core/podcast/domain/models/podcast_model";
+import "./episode_list.module.css";
+import EpisodeItem from "./components/episode_item";
 
 interface Props {
   episodes: Episode[];
@@ -23,15 +24,7 @@ export default function EpisodeList({ episodes, podcastDetail }: Props) {
         </div>
         {episodes.map((episode) => {
           return (
-            <div className="episode-item" key={episode.trackId}>
-              <Link
-                to={`/podcast/${podcastDetail?.id.attributes["im:id"]}/episode/${episode.trackId}`}
-              >
-                <span>{episode.trackName}</span>
-              </Link>
-              <span>{new Date(episode.releaseDate).toLocaleDateString()}</span>
-              <span>{millisecondsToMinutes(episode.trackTimeMillis)}</span>
-            </div>
+            <EpisodeItem episode={episode} podcastDetail={podcastDetail} />
           );
         })}
       </div>
