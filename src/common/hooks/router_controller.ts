@@ -18,9 +18,5 @@ export const useRouterController = () => {
     setIsLoading(false);
   }, [prevLoc]);
 
-  useEffect(() => {
-    console.log("estado", isLoading);
-  }, [isLoading]);
-
   return { isLoading };
 };
