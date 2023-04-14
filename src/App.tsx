@@ -1,11 +1,13 @@
-import { RouterProvider } from "react-router";
-import { router } from "./ui/routes/routes";
+import SwitchRoutes from "./ui/routes/routes";
 import "./App.css";
+import { BrowserRouter } from "react-router-dom";
 
 function App() {
   return (
     <div className="App">
-      <RouterProvider router={router} />
+      <BrowserRouter>
+        <SwitchRoutes />
+      </BrowserRouter>
     </div>
   );
 }

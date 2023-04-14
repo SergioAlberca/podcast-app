@@ -3,9 +3,10 @@
   align-items: center;
   justify-content: flex-end;
   padding: 10px;
+  margin-bottom: 2rem;
 }
 
-.Input-text {
+.input-text {
   width: 30%;
   display: block;
   margin: 0;

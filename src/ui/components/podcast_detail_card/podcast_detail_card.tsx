@@ -1,7 +1,7 @@
-import { getLastElement } from "../../../common/utils/collections";
-import { Podcast } from "../../../core/podcast/domain/models/podcast_model";
-import Loading from "../loading/loading";
-import "./podcast_detail_card.css";
+import { getLastElement } from "@/common/utils/collections";
+import { Podcast } from "@/core/podcast/domain/models/podcast_model";
+import Loading from "@/components/loading/loading";
+import styles from "./podcast_detail_card.module.css";
 
 interface Props {
   podcastDetail: Podcast;
@@ -10,7 +10,7 @@ interface Props {
 export default function PodcastDetailCard({ podcastDetail }: Props) {
   if (!podcastDetail) return <Loading />;
   return (
-    <div className="podcast-detail-card">
+    <div className={styles["podcast-detail-card"]}>
       <img src={getLastElement(podcastDetail["im:image"])?.label} alt="" />
       <h4>{podcastDetail?.["im:name"].label}</h4>
       <h5>{podcastDetail?.["im:artist"].label}</h5>

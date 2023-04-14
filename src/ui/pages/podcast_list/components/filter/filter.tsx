@@ -1,17 +1,17 @@
-import { useState } from "react";
-import "./filter.css";
+import styles from "./filter.module.css";
 
 interface Props {
   payload: string;
   setPayload: (value: string) => void;
 }
+
 export default function Filter({ payload, setPayload }: Props) {
   return (
-    <div className="input-container">
+    <div className={styles["input-container"]}>
       <input
         type="text"
         id="input"
-        className="Input-text"
+        className={styles["input-text"]}
         placeholder="Filter podcasts..."
         value={payload}
         onChange={(e) => setPayload(e.target.value)}

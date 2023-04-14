@@ -1,5 +1,3 @@
-import { Podcast } from "../../core/podcast/domain/models/podcast_model";
-
 export const setLocalStorageElementWithExpiry = <T>(key: string, value: T) => {
   const today = new Date();
   const limitDate = today.setDate(today.getDate() + 1);

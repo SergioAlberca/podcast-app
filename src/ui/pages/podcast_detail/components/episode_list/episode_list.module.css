@@ -1,0 +1,12 @@
+.podcast-detail-episodes {
+  width: 60%;
+  height: auto;
+}
+
+.episode-titles {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+  text-align: center;
+}
