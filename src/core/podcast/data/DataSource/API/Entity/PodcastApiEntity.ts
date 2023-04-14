@@ -1,4 +1,4 @@
-import { Podcast } from "../../../../domain/models/podcast_model";
+import type { Podcast } from "../../../../domain/models/podcast_model";
 
 export interface PodcastAPIEntity {
   feed: {

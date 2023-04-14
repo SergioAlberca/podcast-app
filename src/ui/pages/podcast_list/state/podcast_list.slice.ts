@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import { Podcast } from "@/core/podcast/domain/models/podcast_model";
+import type { Podcast } from "@/core/podcast/domain/models/podcast_model";
 import {
   getLocalStorageElementWithExpiry,
   setLocalStorageElementWithExpiry,
@@ -7,7 +7,7 @@ import {
 import { GetPodcasts } from "@/core/podcast/domain/use_cases/get_podcasts_use_case";
 import { PodcastRepositoryImpl } from "@/core/podcast/data/repositories/podcats_repository";
 import PodcastAPIDataSourceImpl from "@/core/podcast/data/DataSource/API/PodcastApiDataSource";
-import { RootState } from "@/store/store";
+import type { RootState } from "@/store/store";
 
 export interface PodcastListState {
   podcastList: Podcast[];

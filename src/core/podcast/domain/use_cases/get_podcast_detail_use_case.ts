@@ -1,8 +1,8 @@
-import { PodcastRepository } from "../repositories/PodcastRepository";
-import { Podcast } from "../models/podcast_model";
+import type { Episode } from "../models/episode_model";
+import type { PodcastRepository } from "../repositories/PodcastRepository";
 
 export interface GetPodcastDetailUseCase {
-  invoke: (id: string) => Promise<any>;
+  invoke: (id: string) => Promise<Episode[]>;
 }
 
 export class GetPodcastDetail implements GetPodcastDetailUseCase {

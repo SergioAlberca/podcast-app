@@ -6,7 +6,7 @@ import {
   podcastListIsLoading,
 } from "../state/podcast_list.slice";
 import { useDispatch } from "react-redux";
-import { AppDispatch } from "../../../store/store";
+import type { AppDispatch } from "../../../store/store";
 import { useNavigate } from "react-router-dom";
 
 export default function usePodcastListModelController() {

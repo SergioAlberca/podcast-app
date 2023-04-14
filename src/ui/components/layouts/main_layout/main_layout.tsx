@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import type { ReactNode } from "react";
 import styles from "./main_layout.module.css";
 import Header from "../../header/header_component";
 

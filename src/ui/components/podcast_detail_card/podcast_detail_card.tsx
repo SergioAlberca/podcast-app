@@ -1,5 +1,5 @@
 import { getLastElement } from "@/common/utils/collections";
-import { Podcast } from "@/core/podcast/domain/models/podcast_model";
+import type { Podcast } from "@/core/podcast/domain/models/podcast_model";
 import Loading from "@/components/loading/loading";
 import styles from "./podcast_detail_card.module.css";
 

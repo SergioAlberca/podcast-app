@@ -1,4 +1,4 @@
-import { PodcastDetailAPIEntity } from "../../data/DataSource/API/Entity/PodcastDetailApiEntity";
+import type { PodcastDetailAPIEntity } from "../../data/DataSource/API/Entity/PodcastDetailApiEntity";
 
 export const podcastDetailToDomain = (
   apiResponse: Record<string, string>

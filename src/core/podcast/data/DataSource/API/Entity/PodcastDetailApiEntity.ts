@@ -1,4 +1,4 @@
-import { Episode } from "../../../../domain/models/episode_model";
+import type { Episode } from "../../../../domain/models/episode_model";
 
 export interface PodcastDetailAPIEntity {
   resultCount: number;

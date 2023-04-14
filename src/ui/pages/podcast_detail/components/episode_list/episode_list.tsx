@@ -1,5 +1,5 @@
-import { Episode } from "@/core/podcast/domain/models/episode_model";
-import { Podcast } from "@/core/podcast/domain/models/podcast_model";
+import type { Episode } from "@/core/podcast/domain/models/episode_model";
+import type { Podcast } from "@/core/podcast/domain/models/podcast_model";
 import styles from "./episode_list.module.css";
 import EpisodeItem from "./components/episode_item";
 

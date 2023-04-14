@@ -5,11 +5,11 @@ import DetailLayout from "@/components/layouts/detail_layout/detail_layout";
 import styles from "./episode_detail.module.css";
 
 export default function EpisodieDetail() {
-  const { podcastId, episodeId } = useParams();
-  const episode = useAppSelector((state) =>
-    selectedEpisodie(episodeId || "", state)
-  );
-  if (!podcastId || !episodeId || !episode) return <p>Loading...</p>;
+  const { podcastId, episodeId } = useParams() as { podcastId: string; episodeId: string };
+  const episode = useAppSelector((state) => selectedEpisodie(episodeId, state));
+
+  if (!episode) return <p>Loading...</p>;
+
   return (
     <DetailLayout podcastId={podcastId}>
       <div className={styles["episode-detail"]}>
@@ -17,6 +17,7 @@ export default function EpisodieDetail() {
         <p dangerouslySetInnerHTML={{ __html: episode.description }} />
         <audio controls>
           <source src={episode.episodeUrl} type="audio/mp3" />
+          <track src={episode.episodeUrl} kind="captions"></track>
         </audio>
       </div>
     </DetailLayout>

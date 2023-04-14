@@ -1,7 +1,7 @@
 import { getLocaleString } from "@/common/utils/dates";
 import { millisecondsToMinutes } from "@/common/utils/time";
-import { Episode } from "@/core/podcast/domain/models/episode_model";
-import { Podcast } from "@/core/podcast/domain/models/podcast_model";
+import type { Episode } from "@/core/podcast/domain/models/episode_model";
+import type { Podcast } from "@/core/podcast/domain/models/podcast_model";
 import { Link } from "react-router-dom";
 import styles from "./episode_item.module.css";
 

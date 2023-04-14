@@ -1,8 +1,7 @@
-import { Episode } from "../../domain/models/episode_model";
-import { Podcast } from "../../domain/models/podcast_model";
-import { PodcastRepository } from "../../domain/repositories/PodcastRepository";
-import { PodcastDetailAPIEntity } from "../DataSource/API/Entity/PodcastDetailApiEntity";
-import PodcastDataSource from "../DataSource/podcastDataSource";
+import type { Episode } from "../../domain/models/episode_model";
+import type { Podcast } from "../../domain/models/podcast_model";
+import type { PodcastRepository } from "../../domain/repositories/PodcastRepository";
+import type PodcastDataSource from "../DataSource/podcastDataSource";
 
 export class PodcastRepositoryImpl implements PodcastRepository {
   dataSource: PodcastDataSource;

@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
 import { Suspense, lazy, useEffect, useState } from "react";
 import MainLayout from "@/components/layouts/main_layout/main_layout";
 import Loading from "@/components/loading/loading";

@@ -1,4 +1,4 @@
-import { PodcastImage } from "./podcast_image_model";
+import type { PodcastImage } from "./podcast_image_model";
 
 export interface Podcast {
   "im:name": {
