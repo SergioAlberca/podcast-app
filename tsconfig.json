@@ -21,7 +21,8 @@
       "@/common/*": ["src/common/*"],
       "@/components/*": ["src/ui/components/*"],
       "@/pages/*": ["src/ui/pages/*"],
-      "@/store/*": ["src/ui/store/*"]
+      "@/store/*": ["src/ui/store/*"],
+      "@/test/*": ["src/test/*"]
     }
   },
   "include": ["src"],

@@ -1,0 +1,23 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Loading component tests > render component 1`] = `
+<div>
+  <div
+    class="_lds-container_57ddc4"
+    data-testid="loading"
+  >
+    <div
+      class="_lds-roller_57ddc4"
+    >
+      <div />
+      <div />
+      <div />
+      <div />
+      <div />
+      <div />
+      <div />
+      <div />
+    </div>
+  </div>
+</div>
+`;

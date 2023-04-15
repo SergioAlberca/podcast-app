@@ -1,0 +1,17 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Header component tests > render component 1`] = `
+<div>
+  <header
+    class="_header_a4172c"
+  >
+    <a
+      href="/"
+    >
+      <h2>
+        Podcaster
+      </h2>
+    </a>
+  </header>
+</div>
+`;

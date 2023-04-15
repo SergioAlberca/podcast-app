@@ -1,0 +1,13 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`MainLayout component tests > render component 1`] = `
+<div>
+  <div
+    class="_podcast-detail-container_d37adf"
+  >
+    <p>
+      Fake children
+    </p>
+  </div>
+</div>
+`;
