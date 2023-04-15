@@ -9,6 +9,7 @@ export default function Filter({ payload, setPayload }: Props) {
   return (
     <div className={styles["input-container"]}>
       <input
+        data-testid="filter-input"
         type="text"
         id="input"
         className={styles["input-text"]}

@@ -1,0 +1,18 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Filter component test > render component 1`] = `
+<div>
+  <div
+    class="_input-container_da77d8"
+  >
+    <input
+      class="_input-text_da77d8"
+      data-testid="filter-input"
+      id="input"
+      placeholder="Filter podcasts..."
+      type="text"
+      value="fake"
+    />
+  </div>
+</div>
+`;

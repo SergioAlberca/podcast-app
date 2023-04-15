@@ -1,0 +1,24 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Podcast Card component test > render component 1`] = `
+<div>
+  <div
+    aria-hidden="true"
+    class="_card_250b91"
+    data-testid="podcast_card"
+  >
+    <img
+      alt="podcast_image"
+      class="_card-image_250b91"
+      src="https://is3-ssl.mzstatic.com/image/thumb/Podcasts113/v4/f2/21/fa/f221fabd-017f-5125-633b-f1fe4f39802a/mza_182995249085044287.jpg/55x55bb.png"
+    />
+    <h5>
+      The Joe Budden Podcast
+    </h5>
+    <span>
+      Author: 
+      The Joe Budden Network
+    </span>
+  </div>
+</div>
+`;
