@@ -5,28 +5,16 @@ import Loading from "@/components/loading/loading";
 import Filter from "./components/filter/filter";
 
 export default function PodcastsList() {
-  const {
-    filteredPodcasts,
-    podcastListLoading,
-    goToDetail,
-    filterPayload,
-    setFilterPayload,
-  } = usePodcastListModelController();
+  const { filteredPodcasts, podcastListLoading, goToDetail, filterPayload, setFilterPayload } = usePodcastListModelController();
 
   if (podcastListLoading) return <Loading />;
 
   return (
     <>
-      <Filter payload={filterPayload} setPayload={setFilterPayload} />
+      <Filter payload={filterPayload} setPayload={setFilterPayload} podcastLength={filteredPodcasts.length} />
       <div className={styles.container}>
         {filteredPodcasts.map((podcast) => {
-          return (
-            <PodcastCard
-              key={podcast.id.attributes["im:id"]}
-              podcast={podcast}
-              goToDetail={goToDetail}
-            />
-          );
+          return <PodcastCard key={podcast.id.attributes["im:id"]} podcast={podcast} goToDetail={goToDetail} />;
         })}
       </div>
     </>

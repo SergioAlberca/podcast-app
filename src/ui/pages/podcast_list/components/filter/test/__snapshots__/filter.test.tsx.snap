@@ -5,6 +5,7 @@ exports[`Filter component test > render component 1`] = `
   <div
     class="_input-container_da77d8"
   >
+    <span />
     <input
       class="_input-text_da77d8"
       data-testid="filter-input"

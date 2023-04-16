@@ -9,3 +9,7 @@
   text-align: center;
   height: calc(50%);
 }
+
+.podcast-detail-card > hr {
+  width: 100%;
+}
