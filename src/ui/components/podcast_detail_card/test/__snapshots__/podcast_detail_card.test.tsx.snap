@@ -6,30 +6,32 @@ exports[`PodcastCardDetail component tests > render component 1`] = `
     class="_podcast-detail-card_0b225f"
   >
     <a
+      class="_podcast-detail-card__link_0b225f"
       href="/podcast/1535809341"
     >
       <img
         alt="podcast_image"
+        class="_podcast-detail-card__image_0b225f"
         src="https://is1-ssl.mzstatic.com/image/thumb/Podcasts113/v4/f2/21/fa/f221fabd-017f-5125-633b-f1fe4f39802a/mza_182995249085044287.jpg/170x170bb.png"
       />
     </a>
     <hr />
     <a
+      class="_podcast-detail-card__link_0b225f"
       href="/podcast/1535809341"
     >
-      <h4>
+      <h3>
         The Joe Budden Podcast
-      </h4>
-      <h6>
+      </h3>
+      <span>
         The Joe Budden Network
-      </h6>
+      </span>
     </a>
     <hr />
+    <h3>
+      Description:
+    </h3>
     <p>
-      <strong>
-        Description:
-      </strong>
-       
       Tune into Joe Budden and his friends. Follow along the crazy adventures of these very random friends.
     </p>
   </div>

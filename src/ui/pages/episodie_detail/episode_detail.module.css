@@ -1,8 +1,8 @@
-.episode-detail {
+.episode {
   width: 60%;
   padding: 10px;
 }
 
-.episode-detail > audio {
+.episode > .episode__audio {
   width: 100%;
 }

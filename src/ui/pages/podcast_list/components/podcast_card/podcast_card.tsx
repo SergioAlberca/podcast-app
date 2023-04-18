@@ -10,9 +10,9 @@ interface Props {
 export default function PodcastCard({ podcast, goToDetail }: Props) {
   return (
     <div data-testid="podcast_card" className={styles.card} onClick={() => goToDetail(podcast.id.attributes["im:id"])} aria-hidden="true">
-      <img className={styles["card-image"]} src={getFirstElement(podcast["im:image"])?.label} alt="podcast_image" />
+      <img className={styles["card__img"]} src={getFirstElement(podcast["im:image"])?.label} alt="podcast_image" />
       <h5>{podcast["im:name"].label}</h5>
-      <span>Author: {podcast["im:artist"].label}</span>
+      <span className={styles["card__text"]}>Author: {podcast["im:artist"].label}</span>
     </div>
   );
 }

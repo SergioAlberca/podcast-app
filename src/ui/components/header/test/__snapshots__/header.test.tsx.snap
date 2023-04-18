@@ -8,7 +8,9 @@ exports[`Header component tests > render component 1`] = `
     <a
       href="/"
     >
-      <h2>
+      <h2
+        class="_header__title_a4172c"
+      >
         Podcaster
       </h2>
     </a>

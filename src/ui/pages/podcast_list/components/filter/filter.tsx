@@ -8,13 +8,13 @@ interface Props {
 
 export default function Filter({ payload, setPayload, podcastLength }: Props) {
   return (
-    <div className={styles["input-container"]}>
-      <span className={styles["podcast_quantity"]}>{podcastLength}</span>
+    <div className={styles["filter"]}>
+      <span className={styles["filter__quantity"]}>{podcastLength}</span>
       <input
         data-testid="filter-input"
         type="text"
         id="input"
-        className={styles["input-text"]}
+        className={styles["filter__input"]}
         placeholder="Filter podcasts..."
         value={payload}
         onChange={(e) => setPayload(e.target.value)}

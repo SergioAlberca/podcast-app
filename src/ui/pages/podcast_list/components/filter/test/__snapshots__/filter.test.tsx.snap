@@ -3,11 +3,15 @@
 exports[`Filter component test > render component 1`] = `
 <div>
   <div
-    class="_input-container_da77d8"
+    class="_filter_da77d8"
   >
-    <span />
+    <span
+      class="_filter__quantity_da77d8"
+    >
+      0
+    </span>
     <input
-      class="_input-text_da77d8"
+      class="_filter__input_da77d8"
       data-testid="filter-input"
       id="input"
       placeholder="Filter podcasts..."

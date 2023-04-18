@@ -3,7 +3,7 @@
 exports[`MainLayout component tests > render component 1`] = `
 <div>
   <div
-    class="_podcast-detail-container_d37adf"
+    class="_podcast-detail_d37adf"
   >
     <p>
       Fake children

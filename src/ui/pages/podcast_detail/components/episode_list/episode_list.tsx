@@ -11,23 +11,17 @@ interface Props {
 export default function EpisodeList({ episodes, podcastDetail }: Props) {
   return (
     <div className={styles["podcast-detail-episodes"]}>
-      <div>
+      <div className={styles["podcast-detail-episodes-quantity"]}>
         <h3>Episodes: {episodes.length}</h3>
       </div>
-      <div className="episodes-list">
+      <div className={styles["episodes-list"]}>
         <div className={styles["episode-titles"]}>
           <h5>Title</h5>
           <h5>Date</h5>
           <h5>Duration</h5>
         </div>
         {episodes.map((episode) => {
-          return (
-            <EpisodeItem
-              key={episode.trackId}
-              episode={episode}
-              podcastDetail={podcastDetail}
-            />
-          );
+          return <EpisodeItem key={episode.trackId} episode={episode} podcastDetail={podcastDetail} />;
         })}
       </div>
     </div>

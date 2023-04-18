@@ -1,15 +1,23 @@
 .podcast-detail-card {
   border: 1px solid #d7d7d7;
-  width: 30%;
   display: flex;
-  align-items: center;
-  justify-content: center;
   flex-direction: column;
   padding: 10px;
-  text-align: center;
-  height: calc(50%);
+  text-align: left;
+  width: 80%;
+  box-shadow: 5px 5px 15px -5px #000000;
 }
 
-.podcast-detail-card > hr {
+.podcast-detail-card > .podcast-detail-card__link {
+  text-decoration: none;
+  color: black;
+}
+
+.podcast-detail-card > .podcast-detail-card__link > .podcast-detail-card__image {
+  width: 100%;
+  border-radius: 15px;
+}
+
+.podcast-detail-card > .podcast-detail-card__hr {
   width: 100%;
 }

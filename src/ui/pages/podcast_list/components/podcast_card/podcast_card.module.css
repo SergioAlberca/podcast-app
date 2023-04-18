@@ -10,12 +10,12 @@
   box-shadow: 7px 2px 7px -1px rgba(0, 0, 0, 0.5);
 }
 
-.card > img {
+.card > .card__img {
   border-radius: 50%;
   width: 5rem;
   margin-top: -3rem;
 }
 
-.card > span {
+.card > .card__text {
   font-size: 0.7rem;
 }

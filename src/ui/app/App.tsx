@@ -1,5 +1,5 @@
 import { BrowserRouter } from "react-router-dom";
-import SwitchRoutes from "../ui/routes/routes";
+import SwitchRoutes from "../routes/routes";
 import "./App.css";
 
 function App() {

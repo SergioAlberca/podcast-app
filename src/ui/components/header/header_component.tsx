@@ -10,9 +10,9 @@ export default function Header({ isLoadingRoute }: Props) {
   return (
     <header className={styles.header}>
       <Link to={"/"}>
-        <h2>Podcaster</h2>
+        <h2 className={styles["header__title"]}>Podcaster</h2>
       </Link>
-      {isLoadingRoute && <img src={loading} alt="loading" />}
+      {isLoadingRoute && <img className={styles["header__img"]} src={loading} alt="loading" />}
     </header>
   );
 }

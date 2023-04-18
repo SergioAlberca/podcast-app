@@ -27,12 +27,15 @@ Web application to search podcast and her episodes developed with react, typescr
 2.  Clone this repo using `git clone https://github.com/SergioAlberca/podcast-app.git`
 3.  Move to the appropriate directory: `cd podcast-app`.<br />
 4.  Create a `.env.local` file with environment variables which are written below.
-5.  Run `npm i` in order to install dependencies and clean the git repo.<br />
+5.  Create a `.env.dev` file with environment variables which are written below.
+6.  Create a `.env.production` file with environment variables which are written below.
+7.  Run `npm i` in order to install dependencies and clean the git repo.<br />
     _At this point you can run `npm run dev` to see the podcast app at `http://127.0.0.1:5173/`._
-6.  Run `npm run build` to create the production package.
-7.  Run `npm run lint` to check lint.
-8.  Run `npm run test` to run the test suites.
-9.  Run `npm run coverage` to generate the coverage folder.
+8.  Run `npm run build` to create the production package.
+9.  Run `npm run build:dev` to create the production package without minified files.
+10. Run `npm run lint` to check lint.
+11. Run `npm run test` to run the test suites.
+12. Run `npm run coverage` to generate the coverage folder.
 
 ## Documentation
 
@@ -44,5 +47,17 @@ Web application to search podcast and her episodes developed with react, typescr
 
 ## Environment variables
 
+`.env.local`
 VITE_BASE_URL="https://itunes.apple.com"
 VITE_CORS_URL="https://api.allorigins.win"
+VITE_MODE="local"
+
+`.env.dev`
+VITE_BASE_URL="https://itunes.apple.com"
+VITE_CORS_URL="https://api.allorigins.win"
+VITE_MODE="dev"
+
+`.env.production`
+VITE_BASE_URL="https://itunes.apple.com"
+VITE_CORS_URL="https://api.allorigins.win"
+VITE_MODE="production"

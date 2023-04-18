@@ -10,13 +10,15 @@ interface Props {
 }
 
 export default function DetailLayout({ children, podcastId }: Props) {
-  const podcastDetail = useAppSelector((state) =>
-    selectedPodcast(podcastId, state)
-  );
+  const podcastDetail = useAppSelector((state) => selectedPodcast(podcastId, state));
 
   return (
-    <div className={styles["podcast-detail-container"]}>
-      {podcastDetail && <PodcastDetailCard podcastDetail={podcastDetail} />}
+    <div className={styles["podcast-detail"]}>
+      {podcastDetail && (
+        <div>
+          <PodcastDetailCard podcastDetail={podcastDetail} />
+        </div>
+      )}
       {children}
     </div>
   );
