@@ -47,11 +47,13 @@ Web application to search podcast and her episodes developed with react, typescr
 ## Environment variables
 
 `.env.dev`
-VITE_BASE_URL="https://itunes.apple.com"
-VITE_CORS_URL="https://api.allorigins.win"
-VITE_MODE="dev"
+
+- VITE_BASE_URL="https://itunes.apple.com"
+- VITE_CORS_URL="https://api.allorigins.win"
+- VITE_MODE="dev"
 
 `.env.production`
-VITE_BASE_URL="https://itunes.apple.com"
-VITE_CORS_URL="https://api.allorigins.win"
-VITE_MODE="production"
+
+- VITE_BASE_URL="https://itunes.apple.com"
+- VITE_CORS_URL="https://api.allorigins.win"
+- VITE_MODE="production"
