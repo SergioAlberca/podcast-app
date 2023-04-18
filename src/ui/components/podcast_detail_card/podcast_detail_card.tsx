@@ -17,14 +17,14 @@ export default function PodcastDetailCard({ podcastDetail }: Props) {
       <Link to={podcastDeailUrl} className={styles["podcast-detail-card__link"]}>
         <img className={styles["podcast-detail-card__image"]} src={getLastElement(podcastDetail["im:image"])?.label} alt="podcast_image" />
       </Link>
-      <hr />
+      <hr className={styles["podcast-detail-card__hr"]} />
       <Link to={podcastDeailUrl} className={styles["podcast-detail-card__link"]}>
         <h3>{podcastDetail?.["im:name"].label}</h3>
         <span>{podcastDetail?.["im:artist"].label}</span>
       </Link>
-      <hr />
+      <hr className={styles["podcast-detail-card__hr"]} />
       <h3>Description:</h3>
-      <p>{podcastDetail?.summary.label}</p>
+      <p className={styles["podcast-detail-card__summary"]}>{podcastDetail?.summary.label}</p>
     </div>
   );
 }

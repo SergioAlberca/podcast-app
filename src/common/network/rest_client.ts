@@ -1,7 +1,15 @@
-interface TypedResponse<T> extends Response {
-  json<P = T>(): Promise<P>;
-}
+import type { AxiosInstance, AxiosResponse } from "axios";
+import axios from "axios";
 
-export function RestClient<T>(...args: any): Promise<TypedResponse<T>> {
-  return fetch.apply(window, args);
+export class RestClient {
+  private client: AxiosInstance;
+  constructor() {
+    this.client = axios.create({
+      timeout: 10000
+    });
+  }
+
+  async get<T>(url: string): Promise<AxiosResponse<T>> {
+    return await this.client.get<T>(url);
+  }
 }

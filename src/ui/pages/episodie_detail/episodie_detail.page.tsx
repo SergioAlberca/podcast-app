@@ -12,13 +12,16 @@ export default function EpisodieDetail() {
 
   return (
     <DetailLayout podcastId={podcastId}>
-      <div className={styles["episode"]}>
-        <h4>{episode.trackName}</h4>
-        <p dangerouslySetInnerHTML={{ __html: episode.description }} />
-        <audio controls className={styles["episode__audio"]}>
-          <source src={episode.episodeUrl} type="audio/mp3" />
-          <track src={episode.episodeUrl} kind="captions"></track>
-        </audio>
+      <div>
+        <div className={styles["episode"]}>
+          <h4>{episode.trackName}</h4>
+          <p dangerouslySetInnerHTML={{ __html: episode.description }} />
+          <hr className={styles["episode__divider"]} />
+          <audio controls className={styles["episode__audio"]}>
+            <source src={episode.episodeUrl} type="audio/mp3" />
+            <track src={episode.episodeUrl} kind="captions"></track>
+          </audio>
+        </div>
       </div>
     </DetailLayout>
   );

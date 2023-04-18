@@ -15,7 +15,9 @@ exports[`PodcastCardDetail component tests > render component 1`] = `
         src="https://is1-ssl.mzstatic.com/image/thumb/Podcasts113/v4/f2/21/fa/f221fabd-017f-5125-633b-f1fe4f39802a/mza_182995249085044287.jpg/170x170bb.png"
       />
     </a>
-    <hr />
+    <hr
+      class="_podcast-detail-card__hr_0b225f"
+    />
     <a
       class="_podcast-detail-card__link_0b225f"
       href="/podcast/1535809341"
@@ -27,11 +29,15 @@ exports[`PodcastCardDetail component tests > render component 1`] = `
         The Joe Budden Network
       </span>
     </a>
-    <hr />
+    <hr
+      class="_podcast-detail-card__hr_0b225f"
+    />
     <h3>
       Description:
     </h3>
-    <p>
+    <p
+      class="_podcast-detail-card__summary_0b225f"
+    >
       Tune into Joe Budden and his friends. Follow along the crazy adventures of these very random friends.
     </p>
   </div>

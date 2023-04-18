@@ -19,5 +19,10 @@
 }
 
 .podcast-detail-card > .podcast-detail-card__hr {
+  border: 1px solid #d7d7d7;
   width: 100%;
+}
+
+.podcast-detail-card > .podcast-detail-card__summary {
+  font-style: oblique;
 }

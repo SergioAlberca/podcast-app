@@ -16,9 +16,9 @@ export default function EpisodeList({ episodes, podcastDetail }: Props) {
       </div>
       <div className={styles["episodes-list"]}>
         <div className={styles["episode-titles"]}>
-          <h5>Title</h5>
-          <h5>Date</h5>
-          <h5>Duration</h5>
+          <h4>Title</h4>
+          <h4>Date</h4>
+          <h4>Duration</h4>
         </div>
         {episodes.map((episode) => {
           return <EpisodeItem key={episode.trackId} episode={episode} podcastDetail={podcastDetail} />;
