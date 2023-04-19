@@ -36,6 +36,10 @@ Web application to search podcast and her episodes developed with react, typescr
 10. Run `npm run test` to run the test suites.
 11. Run `npm run coverage` to generate the coverage folder.
 
+## Fixes
+
+Sometimes a podcast detail service (https://itunes.apple.com/lookup?id=1291058235&media=podcast&entity=podcastEpisode&limit=20) returns a CORS error and other times it works fine, I have tried this same call in postman and the same problem occurs, sometimes it works and sometimes it doesn't, to test the detail of a podcast I recommend browsing through some until the call is resolved well.
+
 ## Documentation
 
 - [Vite](https://vitejs.dev/) : Vite Next Generation Frontend Tooling.
@@ -49,11 +53,9 @@ Web application to search podcast and her episodes developed with react, typescr
 `.env.dev`
 
 - VITE_BASE_URL="https://itunes.apple.com"
-- VITE_CORS_URL="https://api.allorigins.win"
 - VITE_MODE="dev"
 
 `.env.production`
 
 - VITE_BASE_URL="https://itunes.apple.com"
-- VITE_CORS_URL="https://api.allorigins.win"
 - VITE_MODE="production"
